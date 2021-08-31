@@ -9,11 +9,14 @@ export class UserService extends BehaviorSubject<String> {
 
   constructor() {
     super("");
+    this.users = [];
   }
 
   public addUser(user: String): void {
-    console.log("[UserService] : addUser() à implémenter : " + user);
     this.users.push(user);
     console.log("[UserService] : addUser()  " + user);
+  }
+  public getUsers(): String[] {
+    return this.users;
   }
 }

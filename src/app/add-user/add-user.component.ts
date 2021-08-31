@@ -13,16 +13,12 @@ export class AddUserComponent implements OnInit {
 
   constructor(userService: UserService) {
     this.userService = userService;
-    console.log("[AddUserComponent] Constructor : userService injected.");
   }
 
-  ngOnInit() {
-    console.log("[AddUserComponent] ngOnInit : adding users");
-  }
+  ngOnInit() {}
 
   addUser() {
     const username = this.el.nativeElement.value;
-    console.log("[AddUserComponent] addUser : " + username);
 
     if (username) {
       // on utilise le service ici pour ajouter l'utilisateur;
@@ -30,4 +26,6 @@ export class AddUserComponent implements OnInit {
       this.el.nativeElement.value = "";
     }
   }
+
+  getusers() {}
 }

@@ -7,14 +7,16 @@ import { UserService } from "../shared/user.service";
   styleUrls: ["./user-list.component.css"],
 })
 export class UserListComponent implements OnInit {
-  public users: string[];
+  public users: String[];
 
-  constructor(
-    userService: UserService
-    // il faut probablement injecter un service ici !
-  ) {}
+  private userService: UserService;
+
+  constructor(userService: UserService) {
+    this.userService = userService;
+  }
 
   ngOnInit() {
     // il faut initialiser les users ici avec le service
+    this.users = this.userService.getUsers();
   }
 }
